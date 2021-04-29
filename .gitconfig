@@ -1,0 +1,23 @@
+[alias]
+    co = checkout
+    br = branch
+    cm = commit
+    st = status
+    l = log  --all --graph --abbrev-commit --decorate --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(dim blue)[%an] %Cgreen(%cr)'
+    l2 = log --all --graph --abbrev-commit --decorate --format=format:'%C(dim blue)%h%C(reset) %C(dim green)%cr%C(reset) %C(yellow)%<|(65)%D%C(reset) %C(white)%s%C(reset)'
+    ec = config --global -e
+    wip = !git add -A && git commit -m "WIP"
+    undo = reset HEAD^ --mixed
+    wipe = !git add -A && git commit -qm "WIPE SAVEPOINT" && git reset HEAD^ --hard
+[user]
+    name = 
+    email = 
+[merge]
+    conflictstyle = diff3
+[pull]
+    rebase = true
+[core]
+    autocrlf = input
+#[credential]
+#    helper = !aws codecommit credential-helper $@
+#    UseHttpPath = true
